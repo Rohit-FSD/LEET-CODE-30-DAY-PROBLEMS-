@@ -1,16 +1,16 @@
 function missingNumber(nums) {
      let number = null;
-     let arrayLenght = nums.length;
      nums.sort((a, b) => a - b);
-     for (let i = 0; i < arrayLenght; i++) {
-          if ((arrayLenght === 1 || nums[i + 1] - nums[i] !== 1) && nums[0] === 0) {
+     for (let i = 0; i < nums.length; i++) {
+          if ((nums.length === 1 || nums[i + 1] - nums[i] !== 1) && nums[0] === 0) {
                number = nums[i] + 1;
                break;
-          } else if (arrayLenght === 1 && nums[0] !== 0) {
+          } else if (nums.length === 1 && nums[0] !== 0) {
                number = nums[i] - 1;
                break;
-          } else {
+          } else if (!(nums.length === 1 && nums[0] !== 0) && nums.length === 1 && nums[0] === 0) {
                number = nums[0] - 1;
+               break;
           }
      }
      return number;
