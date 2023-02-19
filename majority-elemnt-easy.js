@@ -1,6 +1,5 @@
 var majorityElement = function (nums) {
-     let countOfCurrentVariable = 0;
-     let countOfPreviousVariable = 0;
+     let countOfCurrentVariable = (countOfPreviousVariable = 0);
      let majorElement = null;
      nums.sort((a, b) => a - b);
      for (let i = 0; i < nums.length; i++) {
